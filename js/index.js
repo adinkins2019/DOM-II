@@ -19,7 +19,6 @@ btns.forEach(btn => {
     event.target.style.color = "white";
     }
   );
-  //btn.addEventListener('mouseover')
 }
 
 );
@@ -34,7 +33,13 @@ destinations.forEach(destination => {
     });
 });
 
-/*const mainContent = document.querySelector('.container .home');
-mainContent.addEventListener('scroll', (event) => {
-    event.target.
-})*/
+const contentSec = document.querySelector('.content-section');
+//console.log(contentSec);
+const contentDest = document.querySelector('.content-destination');
+window.addEventListener('load', () => {
+    contentSec.style.backgroundColor = "#17A2B8";
+    contentDest.style.backgroundColor = "#17A2B8";
+
+});
+
+window.addEventListener('beforeunload', confirm("Are you sure that you want to leave this page?"));
