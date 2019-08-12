@@ -51,7 +51,7 @@ window.addEventListener('load', () => {
 window.addEventListener('beforeunload', (event) => {
     
     event.preventDefault();
-    event.confirm("Are you sure that you want to leave this page?");
+    confirm("Are you sure that you want to leave this page?");
     //Chrome requires this
     event.returnValue = ' ';
 
@@ -78,7 +78,8 @@ nameText.addEventListener('keydown', (event) => {
     if ((keysPressed < 65) || (keysPressed > 90)) {
         alert("You have entered invalid text");
     }
-})
+});
+nameText.addEventListener('focus', (event) => event.target.style.backgroundColor = "#17A2B8");
 
 
 const destinationChoices = ['Fun in The Sun', 'Mountain Excursion', 'Island Getaway'];
@@ -120,3 +121,5 @@ submitBtn.addEventListener('click', (event) => {
     event.preventDefault();
     confirm("You would like to submit the following information:" + "\n" + "Name:" + nameText.value);
 });
+
+window.addEventListener('unload', (event) => alert("Thanks for visiting the Fun Bus!"));
